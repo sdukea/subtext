@@ -1,0 +1,3038 @@
+[
+  {
+    "id": "bm-app-01",
+    "version": "1.0",
+    "split": "dev",
+    "family": "app_build",
+    "specificity": "vague",
+    "target": "app_builder",
+    "difficulty": "medium",
+    "seed": "Build me a website for my business",
+    "intent": {
+      "persona": "Owner of a one-van mobile dog-grooming business in Bristol, non-technical.",
+      "goal": "Let customers see prices and book grooming slots online instead of by phone.",
+      "facts": [
+        {
+          "slot": "core_features",
+          "value": "online booking with time slots, price list, contact page",
+          "materiality": "high"
+        },
+        {
+          "slot": "audience",
+          "value": "local dog owners, mostly on phones",
+          "materiality": "high"
+        },
+        {
+          "slot": "accounts_data",
+          "value": "no customer accounts; owner gets an email for each booking",
+          "materiality": "high"
+        },
+        {
+          "slot": "scope_level",
+          "value": "simple first version this month",
+          "materiality": "medium"
+        },
+        {
+          "slot": "design_direction",
+          "value": "friendly, playful, uses the brand teal",
+          "materiality": "low"
+        }
+      ],
+      "preferences_if_asked": {
+        "pages": "home, prices, book, contact"
+      }
+    },
+    "mustHave": [
+      "Online booking of time slots",
+      "Price list",
+      "Mobile-friendly",
+      "No customer login required"
+    ],
+    "niceToHave": [],
+    "mustNot": [
+      "Generic e-commerce store",
+      "Asks for or invents payment processing"
+    ],
+    "simulator": "cooperative",
+    "outputType": "app build plan",
+    "provenance": "authored"
+  },
+  {
+    "id": "bm-app-02",
+    "version": "1.0",
+    "split": "dev",
+    "family": "app_build",
+    "specificity": "partial",
+    "target": "app_builder",
+    "difficulty": "easy",
+    "seed": "I want an app to track my habits",
+    "intent": {
+      "persona": "Office worker who wants a personal tool, semi-technical.",
+      "goal": "Track 3-5 daily habits with streaks, just for personal use.",
+      "facts": [
+        {
+          "slot": "accounts_data",
+          "value": "only me, no sign-up",
+          "materiality": "high"
+        },
+        {
+          "slot": "core_features",
+          "value": "check off habits daily, see streaks and a weekly view",
+          "materiality": "high"
+        },
+        {
+          "slot": "platform",
+          "value": "web app I can add to my phone home screen",
+          "materiality": "medium"
+        },
+        {
+          "slot": "data_storage",
+          "value": "stored locally on the device is fine",
+          "materiality": "medium"
+        }
+      ]
+    },
+    "mustHave": [
+      "Daily check-off",
+      "Streaks",
+      "Single user / no accounts",
+      "Works on phone"
+    ],
+    "niceToHave": [],
+    "mustNot": [
+      "Social features",
+      "Backend with user accounts"
+    ],
+    "simulator": "terse",
+    "outputType": "app build plan",
+    "provenance": "authored"
+  },
+  {
+    "id": "bm-app-03",
+    "version": "1.0",
+    "split": "dev",
+    "family": "app_build",
+    "specificity": "vague",
+    "target": "app_builder",
+    "difficulty": "medium",
+    "seed": "Make a dashboard for my team",
+    "intent": {
+      "persona": "Customer-support lead at a 12-person team, comfortable with spreadsheets but not code.",
+      "goal": "See daily ticket volume, response times and backlog in one place.",
+      "facts": [
+        {
+          "slot": "core_features",
+          "value": "tickets opened/closed per day, median first-response time, open backlog",
+          "materiality": "high"
+        },
+        {
+          "slot": "data_source",
+          "value": "CSV export from the helpdesk, uploaded weekly",
+          "materiality": "high"
+        },
+        {
+          "slot": "audience",
+          "value": "the support team and their manager",
+          "materiality": "medium"
+        }
+      ],
+      "unknowns": [
+        "which charting library"
+      ]
+    },
+    "mustHave": [
+      "Ticket volume",
+      "Response time",
+      "Backlog",
+      "CSV upload as data source"
+    ],
+    "niceToHave": [],
+    "mustNot": [
+      "Invents a live helpdesk API integration as required"
+    ],
+    "simulator": "uncertain",
+    "outputType": "app build plan",
+    "provenance": "authored"
+  },
+  {
+    "id": "bm-code-01",
+    "version": "1.0",
+    "split": "dev",
+    "family": "coding_task",
+    "specificity": "vague",
+    "target": "coding_agent",
+    "difficulty": "easy",
+    "seed": "My Python script keeps crashing, can you fix it?",
+    "intent": {
+      "persona": "Data analyst maintaining a pandas reporting script, intermediate Python.",
+      "goal": "Fix a KeyError crash when the input CSV is missing a column.",
+      "facts": [
+        {
+          "slot": "evidence",
+          "value": "KeyError: 'region' when processing some monthly CSVs",
+          "materiality": "high"
+        },
+        {
+          "slot": "codebase",
+          "value": "scripts/monthly_report.py, function build_summary",
+          "materiality": "high"
+        },
+        {
+          "slot": "change",
+          "value": "rows without region should be grouped as 'Unknown', not crash",
+          "materiality": "high"
+        },
+        {
+          "slot": "preserve",
+          "value": "don't change the output file format",
+          "materiality": "medium"
+        }
+      ]
+    },
+    "mustHave": [
+      "Mentions KeyError on 'region'",
+      "Missing region -> 'Unknown'",
+      "Keep output format",
+      "Add a test or reproduction"
+    ],
+    "niceToHave": [],
+    "mustNot": [
+      "Rewrite the whole script",
+      "Generic debugging checklist without specifics"
+    ],
+    "simulator": "cooperative",
+    "outputType": "code change",
+    "provenance": "authored"
+  },
+  {
+    "id": "bm-code-02",
+    "version": "1.0",
+    "split": "dev",
+    "family": "coding_task",
+    "specificity": "partial",
+    "target": "coding_agent",
+    "difficulty": "medium",
+    "seed": "Add CSV export to the orders page",
+    "intent": {
+      "persona": "Full-stack developer on a Next.js + Postgres app.",
+      "goal": "Let admins download the currently filtered orders as CSV.",
+      "facts": [
+        {
+          "slot": "codebase",
+          "value": "Next.js App Router, Prisma, Postgres",
+          "materiality": "high"
+        },
+        {
+          "slot": "change",
+          "value": "export respects current filters; includes id, date, customer, total, status",
+          "materiality": "high"
+        },
+        {
+          "slot": "preserve",
+          "value": "admins only; must handle 50k rows without timing out",
+          "materiality": "high"
+        },
+        {
+          "slot": "verification",
+          "value": "add an integration test",
+          "materiality": "medium"
+        }
+      ]
+    },
+    "mustHave": [
+      "Respects filters",
+      "Admin-only",
+      "Handles large exports (streaming)",
+      "Test"
+    ],
+    "niceToHave": [],
+    "mustNot": [
+      "Exports all orders ignoring filters"
+    ],
+    "simulator": "terse",
+    "outputType": "code change",
+    "provenance": "authored"
+  },
+  {
+    "id": "bm-code-03",
+    "version": "1.0",
+    "split": "dev",
+    "family": "coding_task",
+    "specificity": "full",
+    "target": "coding_agent",
+    "difficulty": "easy",
+    "seed": "In src/lib/date.ts, change formatDate so it returns ISO 8601 dates (YYYY-MM-DD) instead of MM/DD/YYYY. Update the three call sites in src/components and the unit tests in src/lib/date.test.ts. Don't change any other behaviour.",
+    "intent": {
+      "persona": "Developer who knows exactly what they want.",
+      "goal": "Switch date formatting to ISO 8601.",
+      "facts": [
+        {
+          "slot": "change",
+          "value": "formatDate in src/lib/date.ts returns YYYY-MM-DD instead of MM/DD/YYYY",
+          "materiality": "high"
+        },
+        {
+          "slot": "codebase",
+          "value": "three call sites in src/components; tests in src/lib/date.test.ts",
+          "materiality": "high"
+        },
+        {
+          "slot": "preserve",
+          "value": "no other behaviour changes",
+          "materiality": "high"
+        }
+      ]
+    },
+    "mustHave": [
+      "formatDate returns YYYY-MM-DD",
+      "Update call sites",
+      "Update tests",
+      "No other behaviour change"
+    ],
+    "niceToHave": [],
+    "mustNot": [
+      "Large refactor"
+    ],
+    "simulator": "cooperative",
+    "outputType": "code change",
+    "provenance": "authored"
+  },
+  {
+    "id": "bm-res-01",
+    "version": "1.0",
+    "split": "dev",
+    "family": "research",
+    "specificity": "vague",
+    "target": "generic",
+    "difficulty": "hard",
+    "seed": "Research the market for my startup",
+    "intent": {
+      "persona": "Founder of a 3-person B2B SaaS doing invoice automation for UK dental clinics.",
+      "goal": "Decide whether to expand to Ireland next year.",
+      "facts": [
+        {
+          "slot": "research_question",
+          "value": "market for invoice automation for dental clinics",
+          "materiality": "high"
+        },
+        {
+          "slot": "scope",
+          "value": "UK now, considering Ireland",
+          "materiality": "high"
+        },
+        {
+          "slot": "decision",
+          "value": "go/no-go on Ireland expansion",
+          "materiality": "high"
+        },
+        {
+          "slot": "deliverable",
+          "value": "2-page memo with market size and top 5 risks",
+          "materiality": "medium"
+        },
+        {
+          "slot": "evidence_standard",
+          "value": "public data only, cite sources",
+          "materiality": "medium"
+        }
+      ],
+      "unknowns": [
+        "exact number of Irish clinics"
+      ]
+    },
+    "mustHave": [
+      "Addresses Ireland expansion decision",
+      "Market size with method",
+      "Public sources cited",
+      "Top risks"
+    ],
+    "niceToHave": [
+      "Compares to UK baseline",
+      "Suggests validation steps"
+    ],
+    "mustNot": [
+      "Generic startup market-research template",
+      "Invented statistics stated as fact"
+    ],
+    "simulator": "cooperative",
+    "outputType": "memo",
+    "provenance": "authored"
+  },
+  {
+    "id": "bm-res-02",
+    "version": "1.0",
+    "split": "dev",
+    "family": "research",
+    "specificity": "partial",
+    "target": "generic",
+    "difficulty": "medium",
+    "seed": "Compare project management tools for us",
+    "intent": {
+      "persona": "Operations manager at a 40-person architecture firm.",
+      "goal": "Pick one tool to replace spreadsheets for project tracking.",
+      "facts": [
+        {
+          "slot": "scope",
+          "value": "must have Gantt charts, client sharing and time tracking",
+          "materiality": "high"
+        },
+        {
+          "slot": "decision",
+          "value": "pick one tool; budget under $15/user/month",
+          "materiality": "high"
+        },
+        {
+          "slot": "known_context",
+          "value": "40 people, mostly non-technical",
+          "materiality": "medium"
+        },
+        {
+          "slot": "deliverable",
+          "value": "comparison table plus a recommendation",
+          "materiality": "medium"
+        }
+      ]
+    },
+    "mustHave": [
+      "Gantt",
+      "Client sharing",
+      "Time tracking",
+      "Price under $15/user",
+      "Recommendation"
+    ],
+    "niceToHave": [],
+    "mustNot": [
+      "Developer-focused tools only"
+    ],
+    "simulator": "uncertain",
+    "outputType": "comparison report",
+    "provenance": "authored"
+  },
+  {
+    "id": "bm-wri-01",
+    "version": "1.0",
+    "split": "dev",
+    "family": "writing",
+    "specificity": "vague",
+    "target": "generic",
+    "difficulty": "easy",
+    "seed": "Write a professional email",
+    "intent": {
+      "persona": "Tenant in Manchester renting a flat from a private landlord.",
+      "goal": "Get the landlord to repair a broken boiler within 48 hours.",
+      "facts": [
+        {
+          "slot": "reader",
+          "value": "landlord",
+          "materiality": "high"
+        },
+        {
+          "slot": "key_points",
+          "value": "boiler broken 9 days; this is the second request",
+          "materiality": "high"
+        },
+        {
+          "slot": "purpose",
+          "value": "a repair date within 48 hours",
+          "materiality": "high"
+        },
+        {
+          "slot": "tone",
+          "value": "firm but polite",
+          "materiality": "medium"
+        }
+      ]
+    },
+    "mustHave": [
+      "Mentions prior request and duration",
+      "Asks for a specific date within 48h",
+      "Firm but polite",
+      "Under ~200 words"
+    ],
+    "niceToHave": [],
+    "mustNot": [
+      "Invented legal threats",
+      "Wrong recipient"
+    ],
+    "simulator": "cooperative",
+    "outputType": "email",
+    "provenance": "authored"
+  },
+  {
+    "id": "bm-wri-02",
+    "version": "1.0",
+    "split": "dev",
+    "family": "writing",
+    "specificity": "partial",
+    "target": "generic",
+    "difficulty": "easy",
+    "seed": "Write a LinkedIn post about our product launch",
+    "intent": {
+      "persona": "Marketing lead at a small accounting-software startup.",
+      "goal": "Announce the launch of automatic receipt scanning.",
+      "facts": [
+        {
+          "slot": "key_points",
+          "value": "receipt scanning in the mobile app, launches Monday",
+          "materiality": "high"
+        },
+        {
+          "slot": "reader",
+          "value": "small-business owners and bookkeepers",
+          "materiality": "high"
+        },
+        {
+          "slot": "purpose",
+          "value": "call to action: try it free for 30 days",
+          "materiality": "medium"
+        },
+        {
+          "slot": "tone",
+          "value": "warm, no hype words",
+          "materiality": "medium"
+        }
+      ]
+    },
+    "mustHave": [
+      "Receipt scanning",
+      "Audience: small businesses/bookkeepers",
+      "30-day free trial CTA",
+      "No hype"
+    ],
+    "niceToHave": [],
+    "mustNot": [
+      "Fabricated statistics or testimonials"
+    ],
+    "simulator": "terse",
+    "outputType": "social post",
+    "provenance": "authored"
+  },
+  {
+    "id": "bm-wri-03",
+    "version": "1.0",
+    "split": "dev",
+    "family": "writing",
+    "specificity": "full",
+    "target": "generic",
+    "difficulty": "easy",
+    "seed": "Write a 120-word, warm email to my manager Sam asking to move our Thursday 1:1 to Friday at the same time because I have a dentist appointment. Offer Monday as a backup.",
+    "intent": {
+      "persona": "Employee rescheduling a routine meeting with their manager.",
+      "goal": "Reschedule a meeting.",
+      "facts": [
+        {
+          "slot": "reader",
+          "value": "manager, Sam",
+          "materiality": "high"
+        },
+        {
+          "slot": "key_points",
+          "value": "move Thursday 1:1 to Friday same time; dentist appointment; Monday as backup",
+          "materiality": "high"
+        },
+        {
+          "slot": "length",
+          "value": "about 120 words, warm tone",
+          "materiality": "medium"
+        }
+      ]
+    },
+    "mustHave": [
+      "To Sam",
+      "Thursday -> Friday same time",
+      "Dentist reason",
+      "Monday backup",
+      "~120 words"
+    ],
+    "niceToHave": [],
+    "mustNot": [
+      "Over-apologetic"
+    ],
+    "simulator": "cooperative",
+    "outputType": "email",
+    "provenance": "authored"
+  },
+  {
+    "id": "bm-gen-01",
+    "version": "1.0",
+    "split": "dev",
+    "family": "research",
+    "specificity": "vague",
+    "target": "generic",
+    "difficulty": "medium",
+    "seed": "Help me study machine learning",
+    "intent": {
+      "persona": "Software engineer, strong Python, weak linear algebra.",
+      "goal": "Ship a recommender system at work in 12 weeks.",
+      "facts": [
+        {
+          "slot": "known_context",
+          "value": "strong Python, weak linear algebra and statistics",
+          "materiality": "high"
+        },
+        {
+          "slot": "scope",
+          "value": "5 hours a week for 12 weeks",
+          "materiality": "high"
+        },
+        {
+          "slot": "decision",
+          "value": "build a recommender for an e-commerce site at work",
+          "materiality": "high"
+        },
+        {
+          "slot": "deliverable",
+          "value": "week-by-week plan with a project",
+          "materiality": "medium"
+        }
+      ]
+    },
+    "mustHave": [
+      "12-week plan",
+      "Sized to ~5h/week",
+      "Linear algebra remediation",
+      "Recommender-focused project"
+    ],
+    "niceToHave": [],
+    "mustNot": [
+      "Generic ML curriculum ignoring recommenders"
+    ],
+    "simulator": "cooperative",
+    "outputType": "study plan",
+    "provenance": "authored"
+  },
+  {
+    "id": "bm-gen-02",
+    "version": "1.0",
+    "split": "dev",
+    "family": "research",
+    "specificity": "vague",
+    "target": "generic",
+    "difficulty": "easy",
+    "seed": "Plan a trip",
+    "intent": {
+      "persona": "Couple in their 30s who like food and wandering neighbourhoods.",
+      "goal": "A 5-day relaxed trip to Lisbon in October on a mid-range budget.",
+      "facts": [
+        {
+          "slot": "scope",
+          "value": "Lisbon",
+          "materiality": "high"
+        },
+        {
+          "slot": "dates",
+          "value": "5 days in mid-October",
+          "materiality": "high"
+        },
+        {
+          "slot": "style",
+          "value": "relaxed, food and neighbourhoods, no tours",
+          "materiality": "medium"
+        },
+        {
+          "slot": "budget",
+          "value": "mid-range",
+          "materiality": "medium"
+        }
+      ]
+    },
+    "mustHave": [
+      "Lisbon",
+      "5 days",
+      "Relaxed food/neighbourhood focus",
+      "Mid-range"
+    ],
+    "niceToHave": [],
+    "mustNot": [
+      "Packed tour schedule"
+    ],
+    "simulator": "uncertain",
+    "outputType": "itinerary",
+    "provenance": "authored"
+  },
+  {
+    "id": "bm-gen-03",
+    "version": "1.0",
+    "split": "dev",
+    "family": "writing",
+    "specificity": "full",
+    "target": "generic",
+    "difficulty": "easy",
+    "seed": "Explain the difference between L1 and L2 regularisation for a junior data scientist, in under 300 words, with one scikit-learn example.",
+    "intent": {
+      "persona": "Senior data scientist mentoring a junior.",
+      "goal": "A short explanation.",
+      "facts": [
+        {
+          "slot": "key_points",
+          "value": "difference between L1 and L2 regularisation",
+          "materiality": "high"
+        },
+        {
+          "slot": "reader",
+          "value": "junior data scientist",
+          "materiality": "high"
+        },
+        {
+          "slot": "length",
+          "value": "under 300 words with one scikit-learn example",
+          "materiality": "high"
+        }
+      ]
+    },
+    "mustHave": [
+      "L1 vs L2 difference",
+      "Junior level",
+      "Under 300 words",
+      "One sklearn example"
+    ],
+    "niceToHave": [],
+    "mustNot": [
+      "Over 300 words"
+    ],
+    "simulator": "cooperative",
+    "outputType": "explanation",
+    "provenance": "authored"
+  },
+  {
+    "id": "bm-app-04",
+    "version": "1.0",
+    "split": "dev",
+    "family": "app_build",
+    "specificity": "vague",
+    "target": "app_builder",
+    "difficulty": "medium",
+    "seed": "need a website for my cake business so people can order",
+    "intent": {
+      "persona": "Owner of a home bakery in Leeds making custom celebration cakes, non-technical.",
+      "goal": "Replace back-and-forth Instagram messages with a structured cake order request.",
+      "facts": [
+        {
+          "slot": "core_features",
+          "value": "order request form: cake size, flavour, collection date, message, inspiration photo upload",
+          "materiality": "high"
+        },
+        {
+          "slot": "accounts_data",
+          "value": "no online payment or checkout; owner replies with a quote and takes a deposit by bank transfer offline",
+          "materiality": "high"
+        },
+        {
+          "slot": "constraints",
+          "value": "minimum 7 days' notice and at most 4 orders per weekend; fully booked weekends shown as unavailable",
+          "materiality": "high"
+        },
+        {
+          "slot": "audience",
+          "value": "local customers, mostly on phones",
+          "materiality": "medium"
+        },
+        {
+          "slot": "design_direction",
+          "value": "soft pastels, photos of past cakes",
+          "materiality": "low"
+        }
+      ]
+    },
+    "mustHave": [
+      "Order request form with size, flavour, date and inspiration photo upload",
+      "Enforces 7-day lead time and weekend capacity of 4 orders",
+      "No online checkout; owner sends a quote after the request",
+      "Owner is notified of each request (e.g. by email)"
+    ],
+    "niceToHave": [
+      "Gallery of past cakes"
+    ],
+    "mustNot": [
+      "Builds a fixed-price product catalogue with a shopping cart",
+      "Adds online card payment"
+    ],
+    "simulator": "cooperative",
+    "outputType": "app build plan",
+    "provenance": "authored"
+  },
+  {
+    "id": "bm-app-05",
+    "version": "1.0",
+    "split": "dev",
+    "family": "app_build",
+    "specificity": "vague",
+    "target": "app_builder",
+    "difficulty": "medium",
+    "seed": "make an app for our football team",
+    "intent": {
+      "persona": "Captain of an adult veterans' Sunday-league football team (players 35+), uses WhatsApp for everything.",
+      "goal": "Know by Thursday night who is playing Sunday and who still owes match fees.",
+      "facts": [
+        {
+          "slot": "core_features",
+          "value": "players mark in/out for each fixture; responses close Thursday 8pm; captain sees headcount",
+          "materiality": "high"
+        },
+        {
+          "slot": "core_features_fees",
+          "value": "track £6 match fee per game as paid/unpaid per player (record only, cash collected at the pitch)",
+          "materiality": "high"
+        },
+        {
+          "slot": "accounts_data",
+          "value": "no passwords; players open a shared link and pick their name",
+          "materiality": "high"
+        },
+        {
+          "slot": "audience",
+          "value": "22 players on phones",
+          "materiality": "medium"
+        },
+        {
+          "slot": "scope_level",
+          "value": "fixtures typed in by the captain each month",
+          "materiality": "low"
+        }
+      ]
+    },
+    "mustHave": [
+      "Per-fixture in/out availability with a Thursday 8pm cutoff",
+      "Captain view with headcount",
+      "Paid/unpaid match-fee record without payment processing",
+      "No-password access via shared link"
+    ],
+    "niceToHave": [],
+    "mustNot": [
+      "Integrates card or online payments",
+      "Adds league tables or scraped fixtures"
+    ],
+    "simulator": "terse",
+    "outputType": "app build plan",
+    "provenance": "authored"
+  },
+  {
+    "id": "bm-app-06",
+    "version": "1.0",
+    "split": "dev",
+    "family": "app_build",
+    "specificity": "vague",
+    "target": "app_builder",
+    "difficulty": "medium",
+    "seed": "I want to build a tool to manage my clients",
+    "intent": {
+      "persona": "Freelance wedding photographer working alone, uses a spreadsheet today.",
+      "goal": "Stop missing contract, deposit and gallery-delivery steps across ~30 weddings a year.",
+      "facts": [
+        {
+          "slot": "core_features",
+          "value": "pipeline stages: enquiry, booked, shot, gallery delivered; per-client wedding date",
+          "materiality": "high"
+        },
+        {
+          "slot": "core_features_tracking",
+          "value": "checkboxes for contract signed and deposit received; reminder when gallery is due 6 weeks after the wedding",
+          "materiality": "high"
+        },
+        {
+          "slot": "starting_point",
+          "value": "existing spreadsheet of ~80 rows to import via CSV",
+          "materiality": "high"
+        },
+        {
+          "slot": "accounts_data",
+          "value": "only me; no client portal",
+          "materiality": "high"
+        },
+        {
+          "slot": "platform",
+          "value": "laptop mostly",
+          "materiality": "low"
+        }
+      ],
+      "unknowns": [
+        "whether calendar sync is needed"
+      ]
+    },
+    "mustHave": [
+      "Pipeline with enquiry/booked/shot/delivered stages",
+      "Contract and deposit tracking per client",
+      "Reminder for gallery delivery 6 weeks after the wedding date",
+      "CSV import of existing spreadsheet"
+    ],
+    "niceToHave": [],
+    "mustNot": [
+      "Multi-user team CRM or sales-forecasting features",
+      "Client-facing portal or logins"
+    ],
+    "simulator": "uncertain",
+    "outputType": "app build plan",
+    "provenance": "authored"
+  },
+  {
+    "id": "bm-app-07",
+    "version": "1.0",
+    "split": "dev",
+    "family": "app_build",
+    "specificity": "vague",
+    "target": "app_builder",
+    "difficulty": "hard",
+    "seed": "can you build an internal tool for our warehouse",
+    "intent": {
+      "persona": "Operations lead at an online houseplant shop with 6 packers in one small warehouse.",
+      "goal": "Log returned and damaged items consistently and decide restock vs dispose.",
+      "facts": [
+        {
+          "slot": "app_purpose",
+          "value": "returns and damage log",
+          "materiality": "high"
+        },
+        {
+          "slot": "core_features",
+          "value": "enter SKU, choose reason (damaged in transit, wrong item sent, customer changed mind), photo, decision restock/dispose; daily summary for the owner",
+          "materiality": "high"
+        },
+        {
+          "slot": "platform",
+          "value": "one shared Android tablet; warehouse wifi drops, so entries must survive brief offline periods",
+          "materiality": "high"
+        },
+        {
+          "slot": "accounts_data",
+          "value": "no individual passwords; packers pick their name from a list",
+          "materiality": "medium"
+        },
+        {
+          "slot": "done_when",
+          "value": "owner gets a daily email summary by reason",
+          "materiality": "medium"
+        }
+      ]
+    },
+    "mustHave": [
+      "Return/damage entry with SKU, reason list, photo and restock/dispose decision",
+      "Works on a shared tablet and tolerates brief offline periods",
+      "Daily summary for the owner",
+      "Packer attribution without individual passwords"
+    ],
+    "niceToHave": [],
+    "mustNot": [
+      "Full inventory management system",
+      "Assumes reliable connectivity with no offline handling"
+    ],
+    "simulator": "cooperative",
+    "outputType": "app build plan",
+    "provenance": "authored"
+  },
+  {
+    "id": "bm-app-08",
+    "version": "1.0",
+    "split": "dev",
+    "family": "app_build",
+    "specificity": "vague",
+    "target": "app_builder",
+    "difficulty": "easy",
+    "seed": "build me a portfolio website",
+    "intent": {
+      "persona": "Retired engineer who builds wooden furniture as a hobby and takes a few commissions a year; not technical.",
+      "goal": "Show his work and get commission enquiries without selling online.",
+      "facts": [
+        {
+          "slot": "core_features",
+          "value": "photo gallery of ~30 pieces grouped by tables, chairs and boxes; commission enquiry form with budget range",
+          "materiality": "high"
+        },
+        {
+          "slot": "constraints",
+          "value": "no prices shown and no shop",
+          "materiality": "high"
+        },
+        {
+          "slot": "accounts_data",
+          "value": "owner must add new pieces and photos himself without touching code",
+          "materiality": "high"
+        },
+        {
+          "slot": "design_direction",
+          "value": "warm, lots of whitespace, large photos",
+          "materiality": "low"
+        }
+      ],
+      "preferences_if_asked": {
+        "about_page": "yes, short story of the workshop"
+      }
+    },
+    "mustHave": [
+      "Gallery grouped by furniture type",
+      "Commission enquiry form including budget range",
+      "Owner can add pieces without code (editable CMS)",
+      "No prices or checkout"
+    ],
+    "niceToHave": [],
+    "mustNot": [
+      "Adds an online shop or prices",
+      "Adds blog/social features he didn't ask for"
+    ],
+    "simulator": "verbose",
+    "outputType": "app build plan",
+    "provenance": "authored"
+  },
+  {
+    "id": "bm-app-09",
+    "version": "1.0",
+    "split": "dev",
+    "family": "app_build",
+    "specificity": "vague",
+    "target": "app_builder",
+    "difficulty": "medium",
+    "seed": "need a booking system for my studio",
+    "intent": {
+      "persona": "Owner of a small pottery studio running evening courses.",
+      "goal": "Let people book and pay for a place on a 6-week course online.",
+      "facts": [
+        {
+          "slot": "core_features",
+          "value": "booking is for a whole 6-week course, not individual drop-in classes; 8 seats per course with a waitlist",
+          "materiality": "high"
+        },
+        {
+          "slot": "accounts_data",
+          "value": "full price paid by card at booking; no customer accounts, email confirmation only",
+          "materiality": "high"
+        },
+        {
+          "slot": "constraints",
+          "value": "owner adds 3-4 courses per term",
+          "materiality": "medium"
+        },
+        {
+          "slot": "core_features_refunds",
+          "value": "refunds handled manually by the owner",
+          "materiality": "low"
+        }
+      ]
+    },
+    "mustHave": [
+      "Course-level booking (6-week course as one product)",
+      "8-seat capacity with waitlist",
+      "Upfront card payment at booking",
+      "No customer accounts; email confirmation"
+    ],
+    "niceToHave": [],
+    "mustNot": [
+      "Single-class calendar booking",
+      "Membership or subscription model"
+    ],
+    "simulator": "terse",
+    "outputType": "app build plan",
+    "provenance": "authored"
+  },
+  {
+    "id": "bm-app-10",
+    "version": "1.0",
+    "split": "dev",
+    "family": "app_build",
+    "specificity": "vague",
+    "target": "coding_agent",
+    "difficulty": "medium",
+    "seed": "build a landing page for my saas",
+    "intent": {
+      "persona": "Solo founder of a scheduling tool for driving instructors, comfortable with Next.js.",
+      "goal": "Collect waitlist sign-ups before launch.",
+      "facts": [
+        {
+          "slot": "starting_point",
+          "value": "existing Next.js App Router repo with Tailwind; page goes at the root route",
+          "materiality": "high"
+        },
+        {
+          "slot": "core_features",
+          "value": "hero, three feature blocks, 'from £9/month' pricing teaser, waitlist email form",
+          "materiality": "high"
+        },
+        {
+          "slot": "accounts_data",
+          "value": "emails saved to the existing Supabase table `waitlist`; UK GDPR consent checkbox required",
+          "materiality": "high"
+        },
+        {
+          "slot": "done_when",
+          "value": "Lighthouse mobile score 90+",
+          "materiality": "medium"
+        },
+        {
+          "slot": "audience",
+          "value": "independent driving instructors in the UK",
+          "materiality": "medium"
+        }
+      ]
+    },
+    "mustHave": [
+      "Uses the existing Next.js + Tailwind project rather than a new scaffold",
+      "Waitlist form writes to the existing `waitlist` table",
+      "Explicit consent checkbox for UK GDPR",
+      "Pricing teaser and feature sections for driving instructors"
+    ],
+    "niceToHave": [],
+    "mustNot": [
+      "Scaffolds a new project or different framework",
+      "Adds user accounts or payments"
+    ],
+    "simulator": "cooperative",
+    "outputType": "app build plan",
+    "provenance": "authored"
+  },
+  {
+    "id": "bm-app-11",
+    "version": "1.0",
+    "split": "dev",
+    "family": "app_build",
+    "specificity": "vague",
+    "target": "app_builder",
+    "difficulty": "medium",
+    "seed": "something to help organise our community garden",
+    "intent": {
+      "persona": "Volunteer coordinator of a 40-plot community garden run by an adult committee.",
+      "goal": "Manage plot allocation, the waiting list and the summer watering rota in one place.",
+      "facts": [
+        {
+          "slot": "core_features",
+          "value": "list of 40 plots with current holder; waiting list ordered by date joined; summer watering rota sign-up by week",
+          "materiality": "high"
+        },
+        {
+          "slot": "accounts_data",
+          "value": "committee of 4 can edit; members view and sign up via a shared link",
+          "materiality": "high"
+        },
+        {
+          "slot": "starting_point",
+          "value": "paper waiting list of 25 names to enter",
+          "materiality": "high"
+        },
+        {
+          "slot": "scope_level",
+          "value": "first version before spring",
+          "materiality": "medium"
+        }
+      ],
+      "unknowns": [
+        "whether all members have email addresses"
+      ]
+    },
+    "mustHave": [
+      "Plot list with holders",
+      "Date-ordered waiting list",
+      "Weekly watering rota sign-up",
+      "Committee-only editing"
+    ],
+    "niceToHave": [],
+    "mustNot": [
+      "Payment or fee collection",
+      "Full member accounts with passwords for everyone"
+    ],
+    "simulator": "uncertain",
+    "outputType": "app build plan",
+    "provenance": "authored"
+  },
+  {
+    "id": "bm-app-12",
+    "version": "1.0",
+    "split": "dev",
+    "family": "app_build",
+    "specificity": "vague",
+    "target": "generic",
+    "difficulty": "medium",
+    "seed": "I want an app that tells me what to cook",
+    "intent": {
+      "persona": "Home cook who keeps about 150 recipes in a notes app; shares meals with a partner.",
+      "goal": "Get dinner suggestions from their own recipes based on what is in the fridge.",
+      "facts": [
+        {
+          "slot": "core_features",
+          "value": "type in ingredients on hand; suggest matches from my own saved recipes, not the internet; filter for 30 minutes or less",
+          "materiality": "high"
+        },
+        {
+          "slot": "constraints",
+          "value": "household is vegetarian and one person has a nut allergy",
+          "materiality": "high"
+        },
+        {
+          "slot": "accounts_data",
+          "value": "shared between me and my partner",
+          "materiality": "medium"
+        },
+        {
+          "slot": "platform",
+          "value": "iPhone",
+          "materiality": "medium"
+        }
+      ]
+    },
+    "mustHave": [
+      "Suggestions drawn from the personal recipe collection",
+      "Vegetarian and nut-free filtering",
+      "30-minute filter",
+      "Shared between two people"
+    ],
+    "niceToHave": [],
+    "mustNot": [
+      "Suggests meat or nut recipes",
+      "Social or public recipe-sharing features"
+    ],
+    "simulator": "cooperative",
+    "outputType": "app build plan",
+    "provenance": "authored"
+  },
+  {
+    "id": "bm-app-13",
+    "version": "1.0",
+    "split": "dev",
+    "family": "app_build",
+    "specificity": "vague",
+    "target": "app_builder",
+    "difficulty": "hard",
+    "seed": "make a quiz app",
+    "intent": {
+      "persona": "Pub quiz host who runs a weekly Tuesday quiz night.",
+      "goal": "Teams answer on phones and a live scoreboard shows on the pub TV.",
+      "facts": [
+        {
+          "slot": "core_features",
+          "value": "host controls rounds; teams join with a room code; answers submitted per round; host marks free-text answers; scoreboard view for the TV",
+          "materiality": "high"
+        },
+        {
+          "slot": "accounts_data",
+          "value": "no sign-up for teams",
+          "materiality": "high"
+        },
+        {
+          "slot": "audience",
+          "value": "up to 15 teams per night",
+          "materiality": "medium"
+        },
+        {
+          "slot": "core_features_media",
+          "value": "picture round support",
+          "materiality": "medium"
+        }
+      ]
+    },
+    "mustHave": [
+      "Host-controlled rounds",
+      "Teams join with a code, no sign-up",
+      "Manual marking of free-text answers",
+      "Separate TV scoreboard view"
+    ],
+    "niceToHave": [],
+    "mustNot": [
+      "Self-paced single-player quiz",
+      "Auto-marking only with multiple choice"
+    ],
+    "simulator": "terse",
+    "outputType": "app build plan",
+    "provenance": "authored"
+  },
+  {
+    "id": "bm-app-14",
+    "version": "1.0",
+    "split": "dev",
+    "family": "app_build",
+    "specificity": "vague",
+    "target": "app_builder",
+    "difficulty": "medium",
+    "seed": "build an inventory app for my shop",
+    "intent": {
+      "persona": "Owner of a second-hand vinyl record shop, sells in store and occasionally online.",
+      "goal": "Know what is in stock and what sold without counting crates.",
+      "facts": [
+        {
+          "slot": "core_features",
+          "value": "every record is a unique item (one copy) with artist, title, condition grade (e.g. VG+, NM) and price; mark as sold",
+          "materiality": "high"
+        },
+        {
+          "slot": "constraints",
+          "value": "used records have no reliable barcodes; search by artist/title instead",
+          "materiality": "high"
+        },
+        {
+          "slot": "done_when",
+          "value": "weekly CSV export of sales for the accountant",
+          "materiality": "high"
+        },
+        {
+          "slot": "accounts_data",
+          "value": "me and one part-timer",
+          "materiality": "low"
+        }
+      ]
+    },
+    "mustHave": [
+      "Unique item records with condition grade and price",
+      "Search by artist/title",
+      "Mark items sold",
+      "Weekly sales CSV export"
+    ],
+    "niceToHave": [],
+    "mustNot": [
+      "Quantity-based stock model",
+      "Depends on barcode scanning"
+    ],
+    "simulator": "verbose",
+    "outputType": "app build plan",
+    "provenance": "authored"
+  },
+  {
+    "id": "bm-app-15",
+    "version": "1.0",
+    "split": "dev",
+    "family": "app_build",
+    "specificity": "vague",
+    "target": "app_builder",
+    "difficulty": "medium",
+    "seed": "app for our volunteers to claim expenses",
+    "intent": {
+      "persona": "Treasurer of a volunteer-run adult choir with about 30 volunteers who incur small costs.",
+      "goal": "Collect expense claims with receipts and approve them before reimbursing.",
+      "facts": [
+        {
+          "slot": "core_features",
+          "value": "volunteer submits amount, category and receipt photo; treasurer approves or rejects with a note",
+          "materiality": "high"
+        },
+        {
+          "slot": "accounts_data",
+          "value": "volunteers sign in with an emailed magic link; treasurer is the only admin",
+          "materiality": "high"
+        },
+        {
+          "slot": "done_when",
+          "value": "monthly CSV of approved claims; reimbursements are done manually by the treasurer",
+          "materiality": "high"
+        },
+        {
+          "slot": "scope_level",
+          "value": "simple, low volume (~15 claims a month)",
+          "materiality": "medium"
+        }
+      ],
+      "unknowns": [
+        "whether mileage claims are needed"
+      ]
+    },
+    "mustHave": [
+      "Claim submission with receipt photo",
+      "Approve/reject flow for the treasurer",
+      "Magic-link sign-in",
+      "Monthly CSV export of approved claims"
+    ],
+    "niceToHave": [],
+    "mustNot": [
+      "Pays volunteers automatically or stores bank details",
+      "Full accounting/bookkeeping system"
+    ],
+    "simulator": "uncertain",
+    "outputType": "app build plan",
+    "provenance": "authored"
+  },
+  {
+    "id": "bm-app-16",
+    "version": "1.0",
+    "split": "dev",
+    "family": "app_build",
+    "specificity": "partial",
+    "target": "app_builder",
+    "difficulty": "hard",
+    "seed": "Build a simple job board for remote design jobs where companies can post listings.",
+    "intent": {
+      "persona": "Solo founder of a newsletter for product designers wanting a side revenue stream.",
+      "goal": "Launch a paid job board with minimal admin.",
+      "facts": [
+        {
+          "slot": "core_features",
+          "value": "companies pay £49 per 30-day listing by card; listings expire automatically",
+          "materiality": "high"
+        },
+        {
+          "slot": "core_features_moderation",
+          "value": "every listing goes to an admin approval queue before going live",
+          "materiality": "high"
+        },
+        {
+          "slot": "accounts_data",
+          "value": "no accounts for companies (edit via emailed link) or job seekers",
+          "materiality": "high"
+        },
+        {
+          "slot": "core_features_alerts",
+          "value": "weekly email digest of new jobs for subscribers",
+          "materiality": "medium"
+        }
+      ]
+    },
+    "mustHave": [
+      "Paid listing (£49 for 30 days) with automatic expiry",
+      "Admin approval before publishing",
+      "No accounts; edit via emailed link",
+      "Weekly email digest"
+    ],
+    "niceToHave": [],
+    "mustNot": [
+      "Candidate profiles or applicant tracking",
+      "Free unmoderated posting"
+    ],
+    "simulator": "cooperative",
+    "outputType": "app build plan",
+    "provenance": "authored"
+  },
+  {
+    "id": "bm-app-17",
+    "version": "1.0",
+    "split": "dev",
+    "family": "app_build",
+    "specificity": "partial",
+    "target": "coding_agent",
+    "difficulty": "medium",
+    "seed": "Build a browser extension that saves articles for reading later.",
+    "intent": {
+      "persona": "Developer building a personal tool, comfortable with TypeScript.",
+      "goal": "Save articles with highlights and read them offline without any server.",
+      "facts": [
+        {
+          "slot": "tech_stack",
+          "value": "Manifest V3, TypeScript",
+          "materiality": "high"
+        },
+        {
+          "slot": "accounts_data",
+          "value": "local storage only; no backend, no sync",
+          "materiality": "high"
+        },
+        {
+          "slot": "core_features",
+          "value": "save current tab with title, selected highlight text and tags; clean reader view offline",
+          "materiality": "high"
+        },
+        {
+          "slot": "done_when",
+          "value": "export saved items to Markdown",
+          "materiality": "medium"
+        }
+      ]
+    },
+    "mustHave": [
+      "Manifest V3 + TypeScript",
+      "No backend; local storage only",
+      "Save with highlights and tags plus offline reader view",
+      "Markdown export"
+    ],
+    "niceToHave": [],
+    "mustNot": [
+      "Adds a server, accounts or cloud sync",
+      "Manifest V2"
+    ],
+    "simulator": "terse",
+    "outputType": "app build plan",
+    "provenance": "authored"
+  },
+  {
+    "id": "bm-app-18",
+    "version": "1.0",
+    "split": "dev",
+    "family": "app_build",
+    "specificity": "partial",
+    "target": "app_builder",
+    "difficulty": "medium",
+    "seed": "A meal-prep ordering site for my gym members, weekly menu, pickup at the gym.",
+    "intent": {
+      "persona": "Owner of an independent gym who partners with a local cook for meal prep.",
+      "goal": "Take weekly prepaid meal orders and give the kitchen a prep list.",
+      "facts": [
+        {
+          "slot": "constraints",
+          "value": "orders close Friday 12:00 for Monday pickup",
+          "materiality": "high"
+        },
+        {
+          "slot": "accounts_data",
+          "value": "members-only via a gym access code; no individual accounts; prepay online by card",
+          "materiality": "high"
+        },
+        {
+          "slot": "core_features",
+          "value": "kitchen gets an aggregated prep list by dish and portion size",
+          "materiality": "high"
+        },
+        {
+          "slot": "audience",
+          "value": "about 200 members, ordering on phones",
+          "materiality": "medium"
+        }
+      ],
+      "unknowns": [
+        "maximum meals the kitchen can make per week"
+      ]
+    },
+    "mustHave": [
+      "Friday-noon order cutoff for Monday pickup",
+      "Access-code gate, no individual accounts",
+      "Online prepayment",
+      "Aggregated kitchen prep list"
+    ],
+    "niceToHave": [],
+    "mustNot": [
+      "Home delivery logistics",
+      "Open to the public without the access code"
+    ],
+    "simulator": "uncertain",
+    "outputType": "app build plan",
+    "provenance": "authored"
+  },
+  {
+    "id": "bm-app-19",
+    "version": "1.0",
+    "split": "dev",
+    "family": "app_build",
+    "specificity": "partial",
+    "target": "generic",
+    "difficulty": "easy",
+    "seed": "An RSVP website for our wedding with meal choices",
+    "intent": {
+      "persona": "Adult couple planning their wedding, one of them semi-technical.",
+      "goal": "Collect RSVPs and meal choices per guest and hand a list to the caterer.",
+      "facts": [
+        {
+          "slot": "accounts_data",
+          "value": "120 guests; one invite code per household lets them RSVP for each named guest",
+          "materiality": "high"
+        },
+        {
+          "slot": "core_features",
+          "value": "meal choice per guest from 3 mains plus a children's meal; dietary notes; RSVP deadline 1 May",
+          "materiality": "high"
+        },
+        {
+          "slot": "done_when",
+          "value": "CSV export for the caterer",
+          "materiality": "high"
+        },
+        {
+          "slot": "constraints",
+          "value": "no gift registry",
+          "materiality": "medium"
+        }
+      ]
+    },
+    "mustHave": [
+      "Household invite codes covering named guests",
+      "Per-guest meal choice incl. children's meal and dietary notes",
+      "RSVP deadline",
+      "CSV export for caterer"
+    ],
+    "niceToHave": [],
+    "mustNot": [
+      "Adds gift registry or payments",
+      "Open RSVP without codes"
+    ],
+    "simulator": "verbose",
+    "outputType": "app build plan",
+    "provenance": "authored"
+  },
+  {
+    "id": "bm-app-20",
+    "version": "1.0",
+    "split": "dev",
+    "family": "app_build",
+    "specificity": "partial",
+    "target": "app_builder",
+    "difficulty": "hard",
+    "seed": "An internal tool for our sales team to log site visits, used on phones in the field.",
+    "intent": {
+      "persona": "Sales manager at a regional agricultural-supplies distributor with 9 field reps.",
+      "goal": "See every rep's customer visits and follow-ups each week.",
+      "facts": [
+        {
+          "slot": "core_features",
+          "value": "rep logs visit against an existing customer (≈400 accounts imported from CSV), outcome and next-step date",
+          "materiality": "high"
+        },
+        {
+          "slot": "platform",
+          "value": "phones in rural areas with patchy signal; visits must save offline and sync later",
+          "materiality": "high"
+        },
+        {
+          "slot": "accounts_data",
+          "value": "company single sign-on for 9 reps and 1 manager",
+          "materiality": "high"
+        },
+        {
+          "slot": "done_when",
+          "value": "weekly per-rep report for the manager",
+          "materiality": "medium"
+        }
+      ]
+    },
+    "mustHave": [
+      "Visit log tied to imported customer list",
+      "Offline save with later sync",
+      "Company SSO sign-in",
+      "Weekly per-rep report"
+    ],
+    "niceToHave": [],
+    "mustNot": [
+      "Full CRM with quotes/pipeline",
+      "Assumes constant connectivity"
+    ],
+    "simulator": "terse",
+    "outputType": "app build plan",
+    "provenance": "authored"
+  },
+  {
+    "id": "bm-app-21",
+    "version": "1.0",
+    "split": "dev",
+    "family": "app_build",
+    "specificity": "full",
+    "target": "app_builder",
+    "difficulty": "easy",
+    "seed": "Build a one-page website for my mobile bike repair service in Cardiff. Sections: a hero saying 'We come to you', a price list (puncture repair £15, full service £60, brake tune £25), our service area (CF postcodes only), and a contact form that emails me. No booking system, no accounts, no payments. Mobile-first, green and white.",
+    "intent": {
+      "persona": "Owner of a one-person mobile bike repair service.",
+      "goal": "A simple one-page site as specified.",
+      "facts": [
+        {
+          "slot": "core_features",
+          "value": "hero 'We come to you'; price list puncture £15, full service £60, brake tune £25; CF postcode service area; contact form emailing owner",
+          "materiality": "high"
+        },
+        {
+          "slot": "constraints",
+          "value": "no booking, no accounts, no payments",
+          "materiality": "high"
+        },
+        {
+          "slot": "design_direction",
+          "value": "mobile-first, green and white",
+          "materiality": "medium"
+        }
+      ]
+    },
+    "mustHave": [
+      "All four sections with the exact prices",
+      "Contact form that emails the owner",
+      "No booking, accounts or payments",
+      "Mobile-first green/white design"
+    ],
+    "niceToHave": [],
+    "mustNot": [
+      "Asks clarifying questions already answered in the request",
+      "Adds booking or payments"
+    ],
+    "simulator": "cooperative",
+    "outputType": "app build plan",
+    "provenance": "authored"
+  },
+  {
+    "id": "bm-app-22",
+    "version": "1.0",
+    "split": "dev",
+    "family": "app_build",
+    "specificity": "full",
+    "target": "app_builder",
+    "difficulty": "medium",
+    "seed": "Make a web app where our book club (12 adults) can vote on next month's book. Each member gets a personal link, can suggest up to 2 books with title and author, and then ranks all suggestions. Voting closes on the 25th and the winner is decided by ranked-choice count. No passwords - the link is the login.",
+    "intent": {
+      "persona": "Organiser of a 12-person adult book club.",
+      "goal": "Run monthly book selection by ranked-choice vote.",
+      "facts": [
+        {
+          "slot": "core_features",
+          "value": "personal link per member; up to 2 suggestions (title, author); rank all suggestions; ranked-choice winner",
+          "materiality": "high"
+        },
+        {
+          "slot": "constraints",
+          "value": "voting closes on the 25th of each month",
+          "materiality": "high"
+        },
+        {
+          "slot": "accounts_data",
+          "value": "no passwords; the personal link is the login",
+          "materiality": "high"
+        }
+      ]
+    },
+    "mustHave": [
+      "Personal-link access without passwords",
+      "Max 2 suggestions per member with title/author",
+      "Ranked ballot with ranked-choice tally",
+      "Close on the 25th"
+    ],
+    "niceToHave": [],
+    "mustNot": [
+      "Asks clarifying questions already answered in the request",
+      "Simple plurality voting instead of ranked choice"
+    ],
+    "simulator": "terse",
+    "outputType": "app build plan",
+    "provenance": "authored"
+  },
+  {
+    "id": "bm-app-23",
+    "version": "1.0",
+    "split": "dev",
+    "family": "app_build",
+    "specificity": "full",
+    "target": "coding_agent",
+    "difficulty": "medium",
+    "seed": "In our existing Next.js App Router project, add a /status page showing whether our three internal services are up by calling GET /health on each (base URLs in env vars STATUS_API, STATUS_WORKER, STATUS_DB). Show green/red per service and the last-checked time, refreshing every 30 seconds client-side. No auth needed since it's behind our VPN. Use the existing Tailwind setup and add a Playwright test.",
+    "intent": {
+      "persona": "Platform engineer at a mid-size software company.",
+      "goal": "An internal status page as specified.",
+      "facts": [
+        {
+          "slot": "core_features",
+          "value": "/status page polling GET /health on STATUS_API, STATUS_WORKER, STATUS_DB; green/red and last-checked time; 30s client refresh",
+          "materiality": "high"
+        },
+        {
+          "slot": "starting_point",
+          "value": "existing Next.js App Router project with Tailwind",
+          "materiality": "high"
+        },
+        {
+          "slot": "verification",
+          "value": "Playwright test",
+          "materiality": "high"
+        },
+        {
+          "slot": "accounts_data",
+          "value": "no auth (behind VPN)",
+          "materiality": "medium"
+        }
+      ]
+    },
+    "mustHave": [
+      "Reads base URLs from the three env vars",
+      "Green/red per service with last-checked time",
+      "30-second client-side refresh",
+      "Playwright test"
+    ],
+    "niceToHave": [],
+    "mustNot": [
+      "Asks clarifying questions already answered in the request",
+      "Adds authentication"
+    ],
+    "simulator": "cooperative",
+    "outputType": "app build plan",
+    "provenance": "authored"
+  },
+  {
+    "id": "bm-app-24",
+    "version": "1.0",
+    "split": "dev",
+    "family": "app_build",
+    "specificity": "full",
+    "target": "app_builder",
+    "difficulty": "medium",
+    "seed": "Build an internal room-booking app for our 25-person office. There are three meeting rooms: Oak (8 seats), Ash (4 seats) and Pine (2 seats, has a screen). Staff sign in with a magic link sent to their work email, see a day view of all rooms, and book 30-minute slots between 8am and 6pm, with a maximum of 2 hours per booking. Show who booked each slot. No recurring bookings in this version.",
+    "intent": {
+      "persona": "Office manager at a 25-person company.",
+      "goal": "Room booking app as specified.",
+      "facts": [
+        {
+          "slot": "core_features",
+          "value": "rooms Oak 8, Ash 4, Pine 2 with screen; day view; 30-minute slots 8am-6pm; max 2 hours; show booker",
+          "materiality": "high"
+        },
+        {
+          "slot": "accounts_data",
+          "value": "magic link to work email",
+          "materiality": "high"
+        },
+        {
+          "slot": "constraints",
+          "value": "no recurring bookings",
+          "materiality": "medium"
+        }
+      ]
+    },
+    "mustHave": [
+      "Three named rooms with capacities",
+      "30-min slots 8am-6pm with 2-hour cap",
+      "Magic-link sign-in with work email",
+      "Booker visible; no recurring bookings"
+    ],
+    "niceToHave": [],
+    "mustNot": [
+      "Asks clarifying questions already answered in the request",
+      "Adds recurring bookings or calendar integrations"
+    ],
+    "simulator": "verbose",
+    "outputType": "app build plan",
+    "provenance": "authored"
+  },
+  {
+    "id": "bm-cod-04",
+    "version": "1.0",
+    "split": "dev",
+    "family": "coding_task",
+    "specificity": "vague",
+    "target": "coding_agent",
+    "difficulty": "easy",
+    "seed": "the login screen is broken on mobile",
+    "intent": {
+      "persona": "Junior developer on a React Native (Expo) app.",
+      "goal": "Make the login submit button reachable when the keyboard is open on Android.",
+      "facts": [
+        {
+          "slot": "codebase",
+          "value": "React Native 0.74 with Expo; screen at app/(auth)/login.tsx",
+          "materiality": "high"
+        },
+        {
+          "slot": "evidence",
+          "value": "Android only: the keyboard covers the password field and Log in button and the screen can't scroll",
+          "materiality": "high"
+        },
+        {
+          "slot": "preserve",
+          "value": "iOS layout must stay as it is",
+          "materiality": "high"
+        },
+        {
+          "slot": "verification",
+          "value": "check on an Android emulator",
+          "materiality": "medium"
+        }
+      ]
+    },
+    "mustHave": [
+      "Identifies Android keyboard overlap as the problem",
+      "Uses KeyboardAvoidingView/scrollable layout or equivalent",
+      "Leaves iOS behaviour unchanged",
+      "Describes how to verify on Android"
+    ],
+    "niceToHave": [],
+    "mustNot": [
+      "Rewrites the auth flow or login logic",
+      "Generic CSS/web responsive advice"
+    ],
+    "simulator": "terse",
+    "outputType": "code change",
+    "provenance": "authored"
+  },
+  {
+    "id": "bm-cod-05",
+    "version": "1.0",
+    "split": "dev",
+    "family": "coding_task",
+    "specificity": "vague",
+    "target": "coding_agent",
+    "difficulty": "medium",
+    "seed": "our api is really slow, can you speed it up",
+    "intent": {
+      "persona": "Backend developer on a Django REST Framework project.",
+      "goal": "Cut the projects list endpoint from seconds to well under a second.",
+      "facts": [
+        {
+          "slot": "evidence",
+          "value": "GET /api/projects/ takes 4-6 s for 200 projects; debug toolbar shows ~1,400 SQL queries (N+1 on owner and task counts)",
+          "materiality": "high"
+        },
+        {
+          "slot": "codebase",
+          "value": "Django 5 + DRF, ProjectSerializer with nested owner and task_count",
+          "materiality": "high"
+        },
+        {
+          "slot": "preserve",
+          "value": "response JSON shape must not change; the mobile app depends on it",
+          "materiality": "high"
+        },
+        {
+          "slot": "verification",
+          "value": "test asserting the query count stays at 10 or fewer",
+          "materiality": "high"
+        }
+      ]
+    },
+    "mustHave": [
+      "Diagnoses N+1 queries on owner/task counts",
+      "Uses select_related/prefetch_related/annotate",
+      "Keeps the JSON response shape identical",
+      "Adds a query-count assertion test"
+    ],
+    "niceToHave": [],
+    "mustNot": [
+      "Adds caching layer as the main fix without fixing N+1",
+      "Changes the response format"
+    ],
+    "simulator": "cooperative",
+    "outputType": "code change",
+    "provenance": "authored"
+  },
+  {
+    "id": "bm-cod-06",
+    "version": "1.0",
+    "split": "dev",
+    "family": "coding_task",
+    "specificity": "vague",
+    "target": "coding_agent",
+    "difficulty": "medium",
+    "seed": "can you write tests for my code",
+    "intent": {
+      "persona": "Go developer who inherited an untested shipping-quote service.",
+      "goal": "Get solid unit test coverage of the quote calculation before changing it.",
+      "facts": [
+        {
+          "slot": "codebase",
+          "value": "Go 1.22 service, package pricing, function CalculateQuote(weightKg, zone)",
+          "materiality": "high"
+        },
+        {
+          "slot": "change",
+          "value": "table-driven tests covering weight tiers, zones A-D and the free-shipping threshold at £50 order value",
+          "materiality": "high"
+        },
+        {
+          "slot": "preserve",
+          "value": "don't change production code; if a test exposes a bug, report it instead of fixing",
+          "materiality": "high"
+        },
+        {
+          "slot": "verification",
+          "value": "go test ./... passes",
+          "materiality": "medium"
+        }
+      ],
+      "unknowns": [
+        "target coverage percentage"
+      ]
+    },
+    "mustHave": [
+      "Table-driven Go tests for CalculateQuote",
+      "Covers weight tiers, zones and £50 free-shipping boundary",
+      "No production code changes; bugs reported",
+      "Runs with go test"
+    ],
+    "niceToHave": [],
+    "mustNot": [
+      "Modifies pricing logic",
+      "Tests in another language or framework"
+    ],
+    "simulator": "uncertain",
+    "outputType": "test suite",
+    "provenance": "authored"
+  },
+  {
+    "id": "bm-cod-07",
+    "version": "1.0",
+    "split": "dev",
+    "family": "coding_task",
+    "specificity": "vague",
+    "target": "coding_agent",
+    "difficulty": "hard",
+    "seed": "help me migrate the database",
+    "intent": {
+      "persona": "Senior developer on a Ruby on Rails 7 SaaS app with continuous deployment.",
+      "goal": "Split users.full_name into first_name and last_name without downtime.",
+      "facts": [
+        {
+          "slot": "change",
+          "value": "add first_name/last_name, backfill from full_name, switch reads/writes",
+          "materiality": "high"
+        },
+        {
+          "slot": "codebase",
+          "value": "Rails 7, Postgres, ~2 million user rows",
+          "materiality": "high"
+        },
+        {
+          "slot": "preserve",
+          "value": "zero downtime; keep full_name until the following release; no long table locks",
+          "materiality": "high"
+        },
+        {
+          "slot": "evidence",
+          "value": "some names are a single word or have multiple spaces",
+          "materiality": "medium"
+        }
+      ]
+    },
+    "mustHave": [
+      "Multi-step migration: add columns, batched backfill, dual-write, later drop",
+      "Avoids long locks on a 2M-row table",
+      "Handles single-word and multi-part names",
+      "Keeps full_name until a later release"
+    ],
+    "niceToHave": [],
+    "mustNot": [
+      "Single migration that renames or drops full_name immediately",
+      "Backfill in one transaction"
+    ],
+    "simulator": "verbose",
+    "outputType": "migration plan",
+    "provenance": "authored"
+  },
+  {
+    "id": "bm-cod-08",
+    "version": "1.0",
+    "split": "dev",
+    "family": "coding_task",
+    "specificity": "vague",
+    "target": "coding_agent",
+    "difficulty": "easy",
+    "seed": "getting a weird error when I deploy",
+    "intent": {
+      "persona": "Indie developer deploying a FastAPI app in Docker.",
+      "goal": "Get the container to start; it works locally.",
+      "facts": [
+        {
+          "slot": "evidence",
+          "value": "container logs: ModuleNotFoundError: No module named 'app'; locally `uvicorn app.main:app` works",
+          "materiality": "high"
+        },
+        {
+          "slot": "codebase",
+          "value": "FastAPI, code in src/app/, Dockerfile copies src/ to /code with WORKDIR /code",
+          "materiality": "high"
+        },
+        {
+          "slot": "preserve",
+          "value": "keep the python:3.12-slim base image",
+          "materiality": "high"
+        },
+        {
+          "slot": "verification",
+          "value": "docker build then curl /health returns 200",
+          "materiality": "medium"
+        }
+      ]
+    },
+    "mustHave": [
+      "Explains the path mismatch causing ModuleNotFoundError",
+      "Fixes Dockerfile COPY/WORKDIR or PYTHONPATH",
+      "Keeps python:3.12-slim",
+      "Gives a verification step"
+    ],
+    "niceToHave": [],
+    "mustNot": [
+      "Generic Docker troubleshooting list",
+      "Switches base image or framework"
+    ],
+    "simulator": "cooperative",
+    "outputType": "code change",
+    "provenance": "authored"
+  },
+  {
+    "id": "bm-cod-09",
+    "version": "1.0",
+    "split": "dev",
+    "family": "coding_task",
+    "specificity": "vague",
+    "target": "coding_agent",
+    "difficulty": "medium",
+    "seed": "refactor this component, it's a mess",
+    "intent": {
+      "persona": "Front-end developer on a React + TypeScript e-commerce site.",
+      "goal": "Make CheckoutForm maintainable without changing behaviour.",
+      "facts": [
+        {
+          "slot": "codebase",
+          "value": "src/components/CheckoutForm.tsx, ~900 lines, 14 useState hooks, validation and API calls inline",
+          "materiality": "high"
+        },
+        {
+          "slot": "change",
+          "value": "extract validation into pure functions, split out AddressFields subcomponent, consolidate state with useReducer",
+          "materiality": "high"
+        },
+        {
+          "slot": "preserve",
+          "value": "no visual or behaviour change; existing Cypress checkout e2e must pass",
+          "materiality": "high"
+        },
+        {
+          "slot": "latitude",
+          "value": "no new dependencies",
+          "materiality": "medium"
+        }
+      ]
+    },
+    "mustHave": [
+      "Pure validation functions extracted",
+      "AddressFields subcomponent",
+      "useReducer for form state",
+      "No behaviour change; e2e still passes"
+    ],
+    "niceToHave": [],
+    "mustNot": [
+      "Adds a form library or other new dependency",
+      "Changes UI or checkout behaviour"
+    ],
+    "simulator": "terse",
+    "outputType": "code change",
+    "provenance": "authored"
+  },
+  {
+    "id": "bm-cod-10",
+    "version": "1.0",
+    "split": "dev",
+    "family": "coding_task",
+    "specificity": "vague",
+    "target": "coding_agent",
+    "difficulty": "medium",
+    "seed": "add search to the app",
+    "intent": {
+      "persona": "iOS developer on a SwiftUI notes app.",
+      "goal": "Let users quickly find notes on-device.",
+      "facts": [
+        {
+          "slot": "codebase",
+          "value": "SwiftUI app, Core Data store with ~3,000 notes (title, body, updatedAt)",
+          "materiality": "high"
+        },
+        {
+          "slot": "change",
+          "value": "search bar filtering title and body; case- and diacritic-insensitive; debounced",
+          "materiality": "high"
+        },
+        {
+          "slot": "preserve",
+          "value": "iOS 16 minimum; no server calls",
+          "materiality": "high"
+        },
+        {
+          "slot": "verification",
+          "value": "unit test for the predicate",
+          "materiality": "medium"
+        }
+      ],
+      "unknowns": [
+        "whether tags should be searchable"
+      ]
+    },
+    "mustHave": [
+      "SwiftUI searchable bar over Core Data",
+      "Searches title and body",
+      "Case/diacritic-insensitive predicate with debounce",
+      "Works on iOS 16, fully on-device"
+    ],
+    "niceToHave": [],
+    "mustNot": [
+      "Adds a backend search service",
+      "Uses APIs requiring iOS 17+"
+    ],
+    "simulator": "uncertain",
+    "outputType": "code change",
+    "provenance": "authored"
+  },
+  {
+    "id": "bm-cod-11",
+    "version": "1.0",
+    "split": "dev",
+    "family": "coding_task",
+    "specificity": "vague",
+    "target": "coding_agent",
+    "difficulty": "medium",
+    "seed": "my sql query is giving the wrong numbers",
+    "intent": {
+      "persona": "Analytics engineer maintaining a Postgres revenue report.",
+      "goal": "Make monthly revenue match finance's numbers.",
+      "facts": [
+        {
+          "slot": "evidence",
+          "value": "orders with more than one shipment are double-counted because the query joins orders to shipments before summing",
+          "materiality": "high"
+        },
+        {
+          "slot": "change",
+          "value": "monthly revenue by order date; March should be £182,400 to match finance",
+          "materiality": "high"
+        },
+        {
+          "slot": "preserve",
+          "value": "same output columns: month, revenue, order_count (a dashboard reads them)",
+          "materiality": "high"
+        },
+        {
+          "slot": "codebase",
+          "value": "Postgres 15, tables orders(id, created_at, total) and shipments(order_id, ...)",
+          "materiality": "medium"
+        }
+      ]
+    },
+    "mustHave": [
+      "Identifies join fan-out from shipments",
+      "Aggregates before joining or uses EXISTS/DISTINCT correctly",
+      "Keeps month/revenue/order_count columns",
+      "Suggests checking March against £182,400"
+    ],
+    "niceToHave": [],
+    "mustNot": [
+      "Uses SUM(DISTINCT total) as a fix",
+      "Changes output columns"
+    ],
+    "simulator": "cooperative",
+    "outputType": "SQL change",
+    "provenance": "authored"
+  },
+  {
+    "id": "bm-cod-12",
+    "version": "1.0",
+    "split": "dev",
+    "family": "coding_task",
+    "specificity": "vague",
+    "target": "coding_agent",
+    "difficulty": "medium",
+    "seed": "set up CI for my project",
+    "intent": {
+      "persona": "Maintainer of a small open-source Python library managed with Poetry.",
+      "goal": "Automatic tests on every PR and publishing on release tags.",
+      "facts": [
+        {
+          "slot": "change",
+          "value": "GitHub Actions workflow: pytest on Python 3.10, 3.11, 3.12; ruff lint; mypy",
+          "materiality": "high"
+        },
+        {
+          "slot": "change_release",
+          "value": "publish to PyPI only when a version tag is pushed",
+          "materiality": "high"
+        },
+        {
+          "slot": "preserve",
+          "value": "credentials only via repository secrets or trusted publishing, never in files",
+          "materiality": "high"
+        },
+        {
+          "slot": "latitude",
+          "value": "don't change the project layout",
+          "materiality": "medium"
+        }
+      ]
+    },
+    "mustHave": [
+      "Test matrix for Python 3.10-3.12",
+      "ruff and mypy steps",
+      "Publish job gated on version tags",
+      "No credentials committed"
+    ],
+    "niceToHave": [],
+    "mustNot": [
+      "Hard-coded tokens in workflow files",
+      "Restructures the project"
+    ],
+    "simulator": "verbose",
+    "outputType": "CI config",
+    "provenance": "authored"
+  },
+  {
+    "id": "bm-cod-13",
+    "version": "1.0",
+    "split": "dev",
+    "family": "coding_task",
+    "specificity": "partial",
+    "target": "coding_agent",
+    "difficulty": "medium",
+    "seed": "Add rate limiting to our Express API.",
+    "intent": {
+      "persona": "Backend developer on a TypeScript Express API used by partner integrations.",
+      "goal": "Stop partners overloading the API.",
+      "facts": [
+        {
+          "slot": "change",
+          "value": "100 requests per minute per API key; respond 429 with Retry-After",
+          "materiality": "high"
+        },
+        {
+          "slot": "codebase",
+          "value": "3 instances behind a load balancer; Redis already in the stack, so limits must be shared",
+          "materiality": "high"
+        },
+        {
+          "slot": "preserve",
+          "value": "/health is exempt",
+          "materiality": "high"
+        },
+        {
+          "slot": "verification",
+          "value": "tests for limit hit and reset",
+          "materiality": "medium"
+        }
+      ]
+    },
+    "mustHave": [
+      "Per-API-key limit of 100/min",
+      "Shared Redis-backed state across instances",
+      "429 with Retry-After",
+      "/health exempt"
+    ],
+    "niceToHave": [],
+    "mustNot": [
+      "In-memory per-instance limiter",
+      "Limits by IP instead of API key"
+    ],
+    "simulator": "terse",
+    "outputType": "code change",
+    "provenance": "authored"
+  },
+  {
+    "id": "bm-cod-14",
+    "version": "1.0",
+    "split": "dev",
+    "family": "coding_task",
+    "specificity": "partial",
+    "target": "coding_agent",
+    "difficulty": "medium",
+    "seed": "Fix the flaky test test_invoice_due_date in our Django suite.",
+    "intent": {
+      "persona": "Developer on a Django invoicing app for UK customers.",
+      "goal": "Make the test deterministic and fix any real bug behind it.",
+      "facts": [
+        {
+          "slot": "evidence",
+          "value": "fails ~1 in 10 runs: AssertionError: datetime.date(2026, 3, 1) != datetime.date(2026, 2, 28), always near midnight",
+          "materiality": "high"
+        },
+        {
+          "slot": "codebase",
+          "value": "due date computed with date.today() while the test uses timezone.now(); TIME_ZONE is Europe/London",
+          "materiality": "high"
+        },
+        {
+          "slot": "preserve",
+          "value": "don't skip, retry or mark the test flaky",
+          "materiality": "high"
+        },
+        {
+          "slot": "verification",
+          "value": "freeze time in the test around midnight and month boundary",
+          "materiality": "medium"
+        }
+      ]
+    },
+    "mustHave": [
+      "Identifies date.today() vs timezone-aware now mismatch",
+      "Uses timezone.localdate()/consistent timezone",
+      "Deterministic test with frozen time at boundary",
+      "No skip/retry workaround"
+    ],
+    "niceToHave": [],
+    "mustNot": [
+      "Adds retries or skips the test",
+      "Only changes the assertion"
+    ],
+    "simulator": "cooperative",
+    "outputType": "code change",
+    "provenance": "authored"
+  },
+  {
+    "id": "bm-cod-15",
+    "version": "1.0",
+    "split": "dev",
+    "family": "coding_task",
+    "specificity": "partial",
+    "target": "coding_agent",
+    "difficulty": "hard",
+    "seed": "Add push notifications to our React Native app when an order ships.",
+    "intent": {
+      "persona": "Mobile developer at a small online retailer.",
+      "goal": "Notify customers when their order ships.",
+      "facts": [
+        {
+          "slot": "codebase",
+          "value": "Expo managed workflow; Node.js backend with an existing order-status webhook handler",
+          "materiality": "high"
+        },
+        {
+          "slot": "change",
+          "value": "send push via Expo's push service when status changes to 'shipped'; tapping opens the order detail screen",
+          "materiality": "high"
+        },
+        {
+          "slot": "preserve",
+          "value": "ask for notification permission after the first order is placed, not at app launch",
+          "materiality": "high"
+        },
+        {
+          "slot": "verification",
+          "value": "manual test on a physical device",
+          "materiality": "medium"
+        }
+      ],
+      "unknowns": [
+        "whether to store push tokens per device or per user"
+      ]
+    },
+    "mustHave": [
+      "Uses Expo push in the managed workflow",
+      "Triggered from the existing status webhook on 'shipped'",
+      "Deep link to order detail",
+      "Permission prompt after first order"
+    ],
+    "niceToHave": [],
+    "mustNot": [
+      "Ejects from Expo or adds a different push vendor",
+      "Requests permission on first launch"
+    ],
+    "simulator": "uncertain",
+    "outputType": "code change",
+    "provenance": "authored"
+  },
+  {
+    "id": "bm-cod-16",
+    "version": "1.0",
+    "split": "dev",
+    "family": "coding_task",
+    "specificity": "full",
+    "target": "coding_agent",
+    "difficulty": "easy",
+    "seed": "In our Go service, ParseConfig in internal/config/config.go panics when the TIMEOUT env var isn't a valid duration. Change it to return a wrapped error (fmt.Errorf with %w) instead, update the two callers in cmd/server/main.go and cmd/worker/main.go to log the error and exit with code 1, and add a table-driven test for invalid, empty and valid values. Don't change any other config fields.",
+    "intent": {
+      "persona": "Go developer who knows exactly what they want.",
+      "goal": "Replace a panic with error handling as specified.",
+      "facts": [
+        {
+          "slot": "change",
+          "value": "ParseConfig returns wrapped error on invalid TIMEOUT instead of panicking",
+          "materiality": "high"
+        },
+        {
+          "slot": "codebase",
+          "value": "callers cmd/server/main.go and cmd/worker/main.go log and exit 1",
+          "materiality": "high"
+        },
+        {
+          "slot": "verification",
+          "value": "table-driven test: invalid, empty, valid",
+          "materiality": "high"
+        },
+        {
+          "slot": "preserve",
+          "value": "no other config fields change",
+          "materiality": "medium"
+        }
+      ]
+    },
+    "mustHave": [
+      "Returns fmt.Errorf with %w instead of panic",
+      "Both callers log and exit(1)",
+      "Table-driven test for invalid/empty/valid",
+      "No other config changes"
+    ],
+    "niceToHave": [],
+    "mustNot": [
+      "Asks clarifying questions already answered in the request",
+      "Refactors unrelated config"
+    ],
+    "simulator": "cooperative",
+    "outputType": "code change",
+    "provenance": "authored"
+  },
+  {
+    "id": "bm-res-03",
+    "version": "1.0",
+    "split": "dev",
+    "family": "research",
+    "specificity": "vague",
+    "target": "generic",
+    "difficulty": "hard",
+    "seed": "find out if a four-day week would work for us",
+    "intent": {
+      "persona": "Managing director of an 18-person digital marketing agency in Leeds.",
+      "goal": "Decide whether to trial a 32-hour four-day week for 6 months from January.",
+      "facts": [
+        {
+          "slot": "decision",
+          "value": "go/no-go on a 6-month trial of a 32-hour week starting January",
+          "materiality": "high"
+        },
+        {
+          "slot": "scope",
+          "value": "client-facing account managers must keep Monday-Friday coverage",
+          "materiality": "high"
+        },
+        {
+          "slot": "evidence_standard",
+          "value": "published UK trial results and agency case studies, cited",
+          "materiality": "high"
+        },
+        {
+          "slot": "deliverable",
+          "value": "2-page brief with rollout options (e.g. staggered days) and risks",
+          "materiality": "medium"
+        }
+      ]
+    },
+    "mustHave": [
+      "Recommendation on the 6-month trial",
+      "Addresses Mon-Fri client coverage (e.g. staggered days)",
+      "Cites published UK trial evidence",
+      "Lists risks and success measures"
+    ],
+    "niceToHave": [],
+    "mustNot": [
+      "Invented trial statistics",
+      "Ignores client coverage constraint"
+    ],
+    "simulator": "terse",
+    "outputType": "memo",
+    "provenance": "authored"
+  },
+  {
+    "id": "bm-res-04",
+    "version": "1.0",
+    "split": "dev",
+    "family": "research",
+    "specificity": "vague",
+    "target": "generic",
+    "difficulty": "medium",
+    "seed": "research competitors for my coffee subscription",
+    "intent": {
+      "persona": "Founder of a small online specialty-coffee subscription based in Scotland.",
+      "goal": "Decide whether to add a cheaper fortnightly 250g tier.",
+      "facts": [
+        {
+          "slot": "research_question",
+          "value": "how 6-8 UK specialty-coffee subscriptions structure plans: frequency, bag size, price, delivery cost, pause/skip",
+          "materiality": "high"
+        },
+        {
+          "slot": "decision",
+          "value": "whether to add a fortnightly 250g tier",
+          "materiality": "high"
+        },
+        {
+          "slot": "evidence_standard",
+          "value": "public website info only; note the date checked",
+          "materiality": "high"
+        },
+        {
+          "slot": "deliverable",
+          "value": "comparison table plus a short recommendation",
+          "materiality": "medium"
+        }
+      ]
+    },
+    "mustHave": [
+      "UK specialty-coffee subscriptions only",
+      "Table with frequency, bag size, price, delivery and pause/skip",
+      "Recommendation on the 250g fortnightly tier",
+      "Dates/sources noted"
+    ],
+    "niceToHave": [],
+    "mustNot": [
+      "Fabricated prices",
+      "US or supermarket brands as main comparators"
+    ],
+    "simulator": "cooperative",
+    "outputType": "comparison report",
+    "provenance": "authored"
+  },
+  {
+    "id": "bm-res-05",
+    "version": "1.0",
+    "split": "dev",
+    "family": "research",
+    "specificity": "vague",
+    "target": "generic",
+    "difficulty": "medium",
+    "seed": "look into grants we could apply for",
+    "intent": {
+      "persona": "Coordinator of a volunteer-run repair café in Wales; an unincorporated community group, not a registered charity.",
+      "goal": "Find realistic grants to fund tools and venue hire next year.",
+      "facts": [
+        {
+          "slot": "scope",
+          "value": "grants up to £5,000 open to unincorporated community groups in Wales",
+          "materiality": "high"
+        },
+        {
+          "slot": "research_question",
+          "value": "funding for tools and venue hire for a repair café",
+          "materiality": "high"
+        },
+        {
+          "slot": "deliverable",
+          "value": "table of grants with eligibility, amount, deadline and application effort",
+          "materiality": "high"
+        },
+        {
+          "slot": "evidence_standard",
+          "value": "official funder pages, cited",
+          "materiality": "medium"
+        }
+      ],
+      "unknowns": [
+        "whether a constitution document is required by most funders"
+      ]
+    },
+    "mustHave": [
+      "Filters for Wales and unincorporated groups",
+      "Flags any requirement for charity registration",
+      "Amounts and deadlines per grant",
+      "Sources cited"
+    ],
+    "niceToHave": [],
+    "mustNot": [
+      "Invented funds or deadlines",
+      "Grants only open to registered charities presented as eligible"
+    ],
+    "simulator": "uncertain",
+    "outputType": "research brief",
+    "provenance": "authored"
+  },
+  {
+    "id": "bm-res-06",
+    "version": "1.0",
+    "split": "dev",
+    "family": "research",
+    "specificity": "partial",
+    "target": "generic",
+    "difficulty": "hard",
+    "seed": "Compare cloud hosting options for our Django app, we're spending too much.",
+    "intent": {
+      "persona": "CTO of a 6-person startup with two developers and no dedicated ops.",
+      "goal": "Decide whether to migrate hosting in Q2 or optimise in place.",
+      "facts": [
+        {
+          "slot": "known_context",
+          "value": "about $1,400/month today; Django + Postgres + Celery + Redis; ~2,000 daily users, mostly EU",
+          "materiality": "high"
+        },
+        {
+          "slot": "scope",
+          "value": "data must stay in the EU (GDPR); minimal ops burden",
+          "materiality": "high"
+        },
+        {
+          "slot": "decision",
+          "value": "migrate in Q2 vs optimise current setup",
+          "materiality": "high"
+        },
+        {
+          "slot": "deliverable",
+          "value": "cost comparison of 3-4 options incl. managed PaaS with migration effort",
+          "materiality": "medium"
+        }
+      ]
+    },
+    "mustHave": [
+      "Covers Postgres, Celery workers and Redis in each option",
+      "EU data residency for all options",
+      "Monthly cost estimates with assumptions",
+      "Migration effort and ops burden for a 2-dev team"
+    ],
+    "niceToHave": [],
+    "mustNot": [
+      "Options that don't support EU residency",
+      "Kubernetes-heavy setup for a team with no ops"
+    ],
+    "simulator": "cooperative",
+    "outputType": "comparison report",
+    "provenance": "authored"
+  },
+  {
+    "id": "bm-res-07",
+    "version": "1.0",
+    "split": "dev",
+    "family": "research",
+    "specificity": "partial",
+    "target": "generic",
+    "difficulty": "medium",
+    "seed": "Research how other charities run volunteer onboarding, for our handbook.",
+    "intent": {
+      "persona": "Volunteer manager at a regional food-bank network onboarding 50+ adult volunteers a month.",
+      "goal": "Improve volunteer retention after the first 3 months.",
+      "facts": [
+        {
+          "slot": "research_question",
+          "value": "induction formats, shadowing and early check-ins that improve 3-month retention",
+          "materiality": "high"
+        },
+        {
+          "slot": "scope",
+          "value": "UK and Irish food banks and similar charities",
+          "materiality": "high"
+        },
+        {
+          "slot": "deliverable",
+          "value": "~1,500-word summary with 5 practical recommendations",
+          "materiality": "high"
+        },
+        {
+          "slot": "evidence_standard",
+          "value": "published reports and volunteering-body guidance, cited",
+          "materiality": "medium"
+        }
+      ]
+    },
+    "mustHave": [
+      "Focus on 3-month retention",
+      "UK/Irish charity examples",
+      "Five practical recommendations",
+      "Cited sources"
+    ],
+    "niceToHave": [],
+    "mustNot": [
+      "Corporate employee-onboarding advice",
+      "Invented retention figures"
+    ],
+    "simulator": "verbose",
+    "outputType": "research summary",
+    "provenance": "authored"
+  },
+  {
+    "id": "bm-res-08",
+    "version": "1.0",
+    "split": "dev",
+    "family": "research",
+    "specificity": "full",
+    "target": "generic",
+    "difficulty": "medium",
+    "seed": "I need a short literature overview on spaced repetition for adult language learners. Cover peer-reviewed studies from 2010 onward, focusing on vocabulary retention measured at least one month later. Output: 600-800 words, a table of 5-8 key studies (authors, year, sample, finding), and a closing paragraph on implications for designing a flashcard schedule. Cite every claim and flag any study you couldn't verify.",
+    "intent": {
+      "persona": "Product manager at a language-learning startup.",
+      "goal": "A literature overview as specified.",
+      "facts": [
+        {
+          "slot": "scope",
+          "value": "peer-reviewed, 2010+, adult language learners, vocabulary retention at 1+ month",
+          "materiality": "high"
+        },
+        {
+          "slot": "deliverable",
+          "value": "600-800 words, table of 5-8 studies, implications paragraph",
+          "materiality": "high"
+        },
+        {
+          "slot": "evidence_standard",
+          "value": "cite every claim; flag unverified studies",
+          "materiality": "high"
+        }
+      ]
+    },
+    "mustHave": [
+      "600-800 words",
+      "Table of 5-8 studies with authors/year/sample/finding",
+      "Implications for flashcard scheduling",
+      "Citations; unverified studies flagged"
+    ],
+    "niceToHave": [],
+    "mustNot": [
+      "Asks clarifying questions already answered in the request",
+      "Fabricated studies"
+    ],
+    "simulator": "cooperative",
+    "outputType": "literature overview",
+    "provenance": "authored"
+  },
+  {
+    "id": "bm-wri-04",
+    "version": "1.0",
+    "split": "dev",
+    "family": "writing",
+    "specificity": "vague",
+    "target": "generic",
+    "difficulty": "medium",
+    "seed": "write a cover letter for me",
+    "intent": {
+      "persona": "Secondary-school science teacher with 9 years' experience moving into instructional design.",
+      "goal": "Get an interview for an instructional designer role at a corporate training company.",
+      "facts": [
+        {
+          "slot": "reader",
+          "value": "hiring manager at a mid-size corporate-training company",
+          "materiality": "high"
+        },
+        {
+          "slot": "key_points",
+          "value": "9 years teaching; built a Year 10 chemistry online course used by 4 schools; self-taught e-learning authoring tools",
+          "materiality": "high"
+        },
+        {
+          "slot": "purpose",
+          "value": "frame the career change as a strength",
+          "materiality": "high"
+        },
+        {
+          "slot": "tone",
+          "value": "confident, not apologetic",
+          "materiality": "medium"
+        },
+        {
+          "slot": "length",
+          "value": "one page",
+          "materiality": "low"
+        }
+      ]
+    },
+    "mustHave": [
+      "Targets instructional design role",
+      "Mentions 9 years teaching and the online course used by 4 schools",
+      "Positions career change confidently",
+      "One page"
+    ],
+    "niceToHave": [],
+    "mustNot": [
+      "Invented degrees, employers or metrics",
+      "Generic teacher cover letter"
+    ],
+    "simulator": "cooperative",
+    "outputType": "cover letter",
+    "provenance": "authored"
+  },
+  {
+    "id": "bm-wri-05",
+    "version": "1.0",
+    "split": "dev",
+    "family": "writing",
+    "specificity": "vague",
+    "target": "generic",
+    "difficulty": "easy",
+    "seed": "write an announcement for the team",
+    "intent": {
+      "persona": "Engineering manager of 22 engineers split between London and Singapore offices.",
+      "goal": "Announce the on-call rotation change clearly.",
+      "facts": [
+        {
+          "slot": "key_points",
+          "value": "on-call moves from weekly rota to follow-the-sun between London and Singapore from 1 March; handovers at 09:00 and 17:00 London time",
+          "materiality": "high"
+        },
+        {
+          "slot": "reader",
+          "value": "22 engineers in both offices",
+          "materiality": "high"
+        },
+        {
+          "slot": "key_points_pay",
+          "value": "out-of-hours compensation stays the same",
+          "materiality": "high"
+        },
+        {
+          "slot": "piece",
+          "value": "team chat post, short",
+          "materiality": "medium"
+        }
+      ]
+    },
+    "mustHave": [
+      "Follow-the-sun from 1 March",
+      "Handover times stated",
+      "Compensation unchanged",
+      "Short chat-friendly format"
+    ],
+    "niceToHave": [],
+    "mustNot": [
+      "Invented policy details",
+      "Long formal memo"
+    ],
+    "simulator": "terse",
+    "outputType": "announcement",
+    "provenance": "authored"
+  },
+  {
+    "id": "bm-wri-06",
+    "version": "1.0",
+    "split": "dev",
+    "family": "writing",
+    "specificity": "vague",
+    "target": "generic",
+    "difficulty": "medium",
+    "seed": "help me write a speech",
+    "intent": {
+      "persona": "Adult daughter giving a speech at her dad's 70th birthday party.",
+      "goal": "A warm, funny 3-4 minute toast.",
+      "facts": [
+        {
+          "slot": "key_points",
+          "value": "dad drove buses in Glasgow for 35 years; took up sea swimming at 65; famous for terrible puns",
+          "materiality": "high"
+        },
+        {
+          "slot": "reader",
+          "value": "about 50 family and friends",
+          "materiality": "high"
+        },
+        {
+          "slot": "length",
+          "value": "3-4 minutes (~450 words)",
+          "materiality": "high"
+        },
+        {
+          "slot": "tone",
+          "value": "warm and funny, not a roast",
+          "materiality": "medium"
+        }
+      ],
+      "unknowns": [
+        "whether to include the camping trip story"
+      ]
+    },
+    "mustHave": [
+      "Uses the bus-driving, sea-swimming and puns details",
+      "Around 450 words",
+      "Warm, affectionate humour",
+      "Ends with a toast"
+    ],
+    "niceToHave": [],
+    "mustNot": [
+      "Roast-style jokes at his expense",
+      "Invented anecdotes presented as true"
+    ],
+    "simulator": "uncertain",
+    "outputType": "speech",
+    "provenance": "authored"
+  },
+  {
+    "id": "bm-wri-07",
+    "version": "1.0",
+    "split": "dev",
+    "family": "writing",
+    "specificity": "vague",
+    "target": "generic",
+    "difficulty": "easy",
+    "seed": "write a product description",
+    "intent": {
+      "persona": "Maker selling handmade leather dog collars on her own website.",
+      "goal": "A product description that justifies a £45+ price.",
+      "facts": [
+        {
+          "slot": "key_points",
+          "value": "vegetable-tanned leather, solid brass buckle, hand-stitched in Cornwall, 2-year guarantee",
+          "materiality": "high"
+        },
+        {
+          "slot": "key_points_sizes",
+          "value": "sizes XS-L with neck measurements 25-55 cm",
+          "materiality": "high"
+        },
+        {
+          "slot": "reader",
+          "value": "dog owners willing to pay for quality",
+          "materiality": "high"
+        },
+        {
+          "slot": "length",
+          "value": "~120 words plus a short spec list",
+          "materiality": "medium"
+        }
+      ]
+    },
+    "mustHave": [
+      "Mentions vegetable-tanned leather, brass, hand-stitched, Cornwall",
+      "2-year guarantee",
+      "Size range with measurements",
+      "~120 words + spec list"
+    ],
+    "niceToHave": [],
+    "mustNot": [
+      "Invented claims (e.g. waterproof, certified organic)",
+      "Generic pet-shop copy"
+    ],
+    "simulator": "verbose",
+    "outputType": "product copy",
+    "provenance": "authored"
+  },
+  {
+    "id": "bm-wri-08",
+    "version": "1.0",
+    "split": "dev",
+    "family": "writing",
+    "specificity": "vague",
+    "target": "generic",
+    "difficulty": "medium",
+    "seed": "draft a remote work policy",
+    "intent": {
+      "persona": "Office manager at a 30-person UK engineering consultancy.",
+      "goal": "A clear internal hybrid-working policy.",
+      "facts": [
+        {
+          "slot": "key_points",
+          "value": "anchor days Tuesday and Thursday in office; core hours 10:00-15:00",
+          "materiality": "high"
+        },
+        {
+          "slot": "key_points_equipment",
+          "value": "one-off £300 home equipment allowance",
+          "materiality": "high"
+        },
+        {
+          "slot": "key_points_requests",
+          "value": "full-remote by written request to line manager, reviewed case by case",
+          "materiality": "high"
+        },
+        {
+          "slot": "reader",
+          "value": "all staff",
+          "materiality": "medium"
+        },
+        {
+          "slot": "length",
+          "value": "1-2 pages",
+          "materiality": "low"
+        }
+      ]
+    },
+    "mustHave": [
+      "Tue/Thu anchor days",
+      "Core hours 10-15",
+      "£300 one-off allowance",
+      "Full-remote request process"
+    ],
+    "niceToHave": [],
+    "mustNot": [
+      "Invented legal obligations",
+      "Fully remote-first policy"
+    ],
+    "simulator": "verbose",
+    "outputType": "policy document",
+    "provenance": "authored"
+  },
+  {
+    "id": "bm-wri-09",
+    "version": "1.0",
+    "split": "dev",
+    "family": "writing",
+    "specificity": "partial",
+    "target": "generic",
+    "difficulty": "easy",
+    "seed": "Write a newsletter intro for our running club's monthly email.",
+    "intent": {
+      "persona": "Volunteer comms lead at an adult running club.",
+      "goal": "An upbeat intro that highlights this month's news.",
+      "facts": [
+        {
+          "slot": "key_points",
+          "value": "club record 92 members ran the Harbour 10K",
+          "materiality": "high"
+        },
+        {
+          "slot": "key_points_events",
+          "value": "new beginners group starts Thursday 6 Feb, 6:30pm from the leisure centre; AGM on 20 Feb",
+          "materiality": "high"
+        },
+        {
+          "slot": "length",
+          "value": "about 150 words, upbeat",
+          "materiality": "medium"
+        }
+      ]
+    },
+    "mustHave": [
+      "Harbour 10K record of 92",
+      "Beginners group details",
+      "AGM date",
+      "~150 words upbeat"
+    ],
+    "niceToHave": [],
+    "mustNot": [
+      "Invented race results or names"
+    ],
+    "simulator": "terse",
+    "outputType": "newsletter intro",
+    "provenance": "authored"
+  }
+]
